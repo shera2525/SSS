@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#07131f">
+<title>EcoBurabay AI — Защищаем биоразнообразие</title>
+<style>
+:root{--bg:#07131f;--panel:#0d2030;--panel2:#102a3a;--cyan:#35ead5;--blue:#49baff;--purple:#9b7cff;--text:#eff8ff;--muted:#a8bdcc;--line:rgba(91,220,221,.22);--radius:22px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 80% 0%,#122f48 0,transparent 30%),var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Arial,sans-serif;line-height:1.55}
+a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer}.container{width:min(1160px,calc(100% - 40px));margin:auto}
+header{position:sticky;top:0;z-index:10;background:rgba(7,19,31,.86);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:11px;font-weight:850;letter-spacing:.4px}.brand-mark{width:39px;height:39px;border-radius:13px;background:linear-gradient(135deg,var(--cyan),var(--blue));display:grid;place-items:center;color:#05202b;font-size:22px;box-shadow:0 0 28px #35ead544}.brand span span{color:var(--cyan)}
+nav{display:flex;gap:26px;color:var(--muted);font-size:14px}nav a:hover{color:var(--cyan)}.nav-cta,.btn{border:0;border-radius:13px;padding:12px 18px;background:linear-gradient(100deg,var(--cyan),#54c9ff);color:#05202a;font-weight:800;box-shadow:0 8px 30px #35ead522}.menu{display:none;background:none;border:1px solid var(--line);color:white;border-radius:10px;padding:8px 12px}
+.hero{padding:78px 0 64px;display:grid;grid-template-columns:1.08fr .92fr;align-items:center;gap:48px;min-height:600px}.eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--cyan);border:1px solid var(--line);background:#0b2733;border-radius:999px;padding:7px 13px;font-size:12px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase}.dot{width:7px;height:7px;background:var(--cyan);border-radius:50%;box-shadow:0 0 12px var(--cyan)}
+h1{font-size:clamp(42px,6vw,74px);line-height:1.02;letter-spacing:-2.8px;margin:22px 0}.gradient{background:linear-gradient(100deg,#fff 10%,var(--cyan) 65%,#85baff);-webkit-background-clip:text;background-clip:text;color:transparent}.hero p{color:var(--muted);font-size:17px;max-width:590px}.actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:28px}.btn.secondary{background:transparent;color:var(--text);border:1px solid var(--line);box-shadow:none}.stats{display:flex;gap:30px;margin-top:40px;flex-wrap:wrap}.stat strong{display:block;font-size:25px;color:var(--cyan)}.stat small{color:var(--muted)}
+.hero-art{position:relative;min-height:440px;border:1px solid var(--line);border-radius:30px;overflow:hidden;background:linear-gradient(145deg,#123348,#091b2b 65%);box-shadow:0 25px 80px #0006}.hero-art:before,.hero-art:after{content:"";position:absolute;border:1px solid #35ead544;border-radius:50%;width:340px;height:340px;left:50%;top:50%;transform:translate(-50%,-50%);box-shadow:0 0 70px #35ead522,inset 0 0 50px #35ead511}.hero-art:after{width:260px;height:260px;border-color:#9b7cff66}.orbit{position:absolute;inset:0;background:radial-gradient(circle at 50% 45%,#35ead51c,transparent 42%)}.leaf{position:absolute;left:50%;top:46%;transform:translate(-50%,-50%);font-size:150px;filter:drop-shadow(0 0 28px #35ead588);animation:float 5s ease-in-out infinite}.art-label{position:absolute;bottom:22px;left:22px;right:22px;display:flex;justify-content:space-between;gap:10px;background:#07131fcc;border:1px solid var(--line);padding:14px 16px;border-radius:15px;backdrop-filter:blur(10px);font-size:13px}.art-label b{color:var(--cyan)}.spark{position:absolute;color:var(--cyan);font-size:20px;animation:twinkle 3s infinite}.s1{top:17%;left:19%}.s2{top:28%;right:15%;animation-delay:1s}.s3{bottom:28%;right:20%;animation-delay:2s}
+@keyframes float{50%{transform:translate(-50%,-55%) rotate(-5deg)}}@keyframes twinkle{50%{opacity:.25;transform:scale(.7)}}
+section{padding:78px 0}.section-head{max-width:680px;margin-bottom:34px}.kicker{color:var(--cyan);font-size:12px;font-weight:850;letter-spacing:1.8px;text-transform:uppercase}.section-head h2{font-size:clamp(30px,4vw,46px);line-height:1.12;margin:10px 0}.section-head p{color:var(--muted);margin:0}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:linear-gradient(145deg,#10283a,#0a1b2a);border:1px solid var(--line);border-radius:var(--radius);padding:22px;transition:.25s}.card:hover{transform:translateY(-5px);border-color:#35ead588;box-shadow:0 18px 45px #0003}.card-icon{width:52px;height:52px;border-radius:16px;background:#35ead51a;display:grid;place-items:center;font-size:27px;margin-bottom:17px}.card h3{margin:0 0 7px;font-size:19px}.card p{margin:0;color:var(--muted);font-size:14px}
+.species{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.species-card{overflow:hidden;padding:0}.species-visual{height:180px;display:grid;place-items:center;font-size:76px;background:radial-gradient(circle at 50% 60%,#2a7b7966,transparent 55%),linear-gradient(135deg,#163d4a,#0b1e2d)}.species-info{padding:20px}.tag{display:inline-block;color:var(--cyan);font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase}.species-info p{font-size:13px;color:var(--muted)}
+.ai-wrap{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:stretch}.upload-box{border:1px dashed #35ead588;border-radius:24px;padding:28px;background:#0c2231;min-height:330px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}.upload-box input{display:none}.upload-icon{font-size:46px;margin-bottom:12px}.upload-box p{color:var(--muted);font-size:14px}.preview{max-width:100%;max-height:180px;border-radius:15px;display:none;margin:12px auto;object-fit:cover}.result{background:linear-gradient(145deg,#10283a,#0a1b2a);border:1px solid var(--line);border-radius:24px;padding:27px}.result h3{margin-top:0}.result-placeholder{height:230px;display:grid;place-items:center;text-align:center;color:var(--muted);border:1px solid var(--line);border-radius:16px;background:#071722;padding:20px}.result-placeholder .big{font-size:42px}.result-content{display:none}.notice{font-size:12px;color:#9fb5c6;margin-top:12px}
+.map-panel{border:1px solid var(--line);border-radius:25px;overflow:hidden;background:#0c2231}.map-top{padding:22px;display:flex;justify-content:space-between;gap:15px;align-items:center}.map-top p{color:var(--muted);font-size:13px;margin:4px 0 0}.map-canvas{height:330px;position:relative;overflow:hidden;background-color:#102d39;background-image:linear-gradient(30deg,transparent 48%,#4bb7a51c 49%,#4bb7a51c 50%,transparent 51%),linear-gradient(120deg,transparent 48%,#4bb7a51c 49%,#4bb7a51c 50%,transparent 51%);background-size:90px 90px}.lake{position:absolute;width:55%;height:65%;left:22%;top:18%;background:linear-gradient(135deg,#1e7890,#15536f);border-radius:55% 45% 60% 40%;transform:rotate(-18deg);opacity:.8;box-shadow:0 0 55px #35b7c533}.forest{position:absolute;color:#2f8d71;font-size:25px;letter-spacing:12px;opacity:.65}.f1{top:12%;left:8%}.f2{bottom:12%;right:7%}.pin{position:absolute;width:38px;height:38px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:var(--cyan);box-shadow:0 0 24px #35ead599;border:3px solid #eaffff;display:grid;place-items:center}.pin span{transform:rotate(45deg);font-size:16px}.p1{left:27%;top:35%}.p2{left:62%;top:52%;background:var(--purple)}.p3{left:48%;top:17%}.map-caption{position:absolute;bottom:13px;left:15px;background:#07131fe8;padding:8px 12px;border-radius:10px;font-size:11px;color:var(--muted)}
+.impact{display:grid;grid-template-columns:1fr 1fr;gap:22px}.impact-main{background:linear-gradient(135deg,#0d3d46,#10253b);border-radius:25px;padding:30px;border:1px solid #35ead544}.impact-main h3{font-size:27px;margin:0 0 10px}.impact-main p{color:#c3d8e4}.impact-list{display:grid;gap:12px}.impact-item{display:flex;gap:14px;align-items:center;padding:17px;border:1px solid var(--line);border-radius:16px;background:#0c2030}.impact-item span{font-size:25px}.impact-item b{display:block}.impact-item small{color:var(--muted)}
+footer{border-top:1px solid var(--line);padding:30px 0;color:var(--muted);font-size:13px}.footer-inner{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+.toast{position:fixed;bottom:20px;left:50%;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:#d9fff8;color:#06232a;padding:12px 18px;border-radius:12px;font-weight:750;box-shadow:0 10px 40px #0005;transition:.25s;z-index:30}.toast.show{opacity:1;transform:translate(-50%,0)}
+@media(max-width:850px){nav{display:none;position:absolute;top:76px;left:0;right:0;background:#091a28;padding:20px;flex-direction:column;border-bottom:1px solid var(--line)}nav.open{display:flex}.menu{display:block}.nav-cta{display:none}.hero{grid-template-columns:1fr;padding-top:55px;gap:30px}.hero-art{min-height:350px}.grid,.species{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.container{width:min(100% - 28px,1160px)}.nav{height:68px}.hero{padding:45px 0}.hero-art{min-height:300px}.leaf{font-size:115px}.grid,.species,.ai-wrap,.impact{grid-template-columns:1fr}.stats{gap:20px}.stat strong{font-size:22px}section{padding:58px 0}.map-top{align-items:flex-start;flex-direction:column}.map-canvas{height:280px}.art-label{font-size:11px}.section-head h2{letter-spacing:-1px}}
+</style>
+</head>
+<body>
+<header><div class="container nav">
+<a class="brand" href="#home"><span class="brand-mark">✳</span><span>Eco<span>Burabay</span> AI</span></a>
+<nav id="nav"><a href="#about">О проекте</a><a href="#species">Биоразнообразие</a><a href="#ai">AI-распознавание</a><a href="#map">Эко-карта</a></nav>
+<a class="nav-cta" href="#ai">Попробовать AI ↗</a><button class="menu" id="menu" aria-label="Открыть меню">☰</button>
+</div></header>
+<main>
+<div class="container hero" id="home">
+<div><div class="eyebrow"><i class="dot"></i> Технологии для природы</div>
+<h1>Узнавай природу.<br><span class="gradient">Защищай будущее.</span></h1>
+<p>EcoBurabay AI — цифровая платформа для изучения и сохранения биоразнообразия Бурабая с помощью искусственного интеллекта.</p>
+<div class="actions"><a class="btn" href="#ai">Попробовать распознавание ↗</a><a class="btn secondary" href="#about">Узнать о проекте</a></div>
+<div class="stats"><div class="stat"><strong>AI</strong><small>умный помощник</small></div><div class="stat"><strong>24/7</strong><small>доступ к знаниям</small></div><div class="stat"><strong>Burabay</strong><small>наш регион</small></div></div></div>
+<div class="hero-art"><div class="orbit"></div><span class="spark s1">✦</span><span class="spark s2">✧</span><span class="spark s3">✦</span><div class="leaf">🌿</div><div class="art-label"><span><b>ECOSYSTEM SCAN</b><br>Исследуй живой мир</span><span>● ONLINE DEMO</span></div></div>
+</div>
+<section id="about"><div class="container"><div class="section-head"><div class="kicker">О проекте</div><h2>Технологии на стороне природы</h2><p>Мы хотим сделать знания о местной природе доступнее и помочь людям внимательнее относиться к окружающей среде.</p></div>
+<div class="grid">
+<div class="card"><div class="card-icon">📷</div><h3>Распознавание видов</h3><p>Загрузка фотографии и знакомство с возможным видом растения или животного.</p></div>
+<div class="card"><div class="card-icon">🗺️</div><h3>Эко-карта</h3><p>Визуализация наблюдений и важных природных мест региона.</p></div>
+<div class="card"><div class="card-icon">📚</div><h3>База знаний</h3><p>Краткие справки о видах, среде обитания и роли организмов в экосистеме.</p></div>
+</div></div></section>
+<section id="species"><div class="container"><div class="section-head"><div class="kicker">Живой мир региона</div><h2>Биоразнообразие Бурабая</h2><p>Несколько примеров природных объектов, о которых можно узнать больше на платформе.</p></div>
+<div class="species">
+<article class="card species-card"><div class="species-visual">🌲</div><div class="species-info"><span class="tag">Растительный мир</span><h3>Сосна</h3><p>Хвойные леса — важная часть ландшафта Бурабая. Они создают среду обитания для множества организмов.</p></div></article>
+<article class="card species-card"><div class="species-visual">🦌</div><div class="species-info"><span class="tag">Животный мир</span><h3>Косуля</h3><p>Лесное млекопитающее, которому нужны укрытия, кормовая база и спокойные места обитания.</p></div></article>
+<article class="card species-card"><div class="species-visual">🦅</div><div class="species-info"><span class="tag">Птицы</span><h3>Хищные птицы</h3><p>Птицы-хищники занимают важное место в пищевых цепях и помогают поддерживать баланс экосистемы.</p></div></article>
+</div><p class="notice">Примеры для демонстрации. Перед публикацией точного перечня видов необходимо сверить его с данными национального парка и специалистами.</p>
+</div></section>
+<section id="ai"><div class="container"><div class="section-head"><div class="kicker">Интерактивная демонстрация</div><h2>Попробуй AI-распознавание</h2><p>Выбери фотографию с устройства. Сайт покажет её предпросмотр и демонстрационный сценарий анализа.</p></div>
+<div class="ai-wrap"><div class="upload-box" id="drop">
+<div class="upload-icon">📸</div><h3>Загрузи фото природы</h3><p>Подойдут изображения растений, птиц или животных. JPG, PNG или WEBP.</p>
+<label class="btn" for="photo">Выбрать фотографию</label><input id="photo" type="file" accept="image/*"><img id="preview" class="preview" alt="Предпросмотр загруженного изображения"><button class="btn secondary" id="analyze" style="display:none;margin-top:10px">Показать демо-анализ</button>
+</div><div class="result"><h3>Результат анализа</h3><div class="result-placeholder" id="placeholder"><div><div class="big">✧</div><b>Здесь появится результат</b><br><small>Сначала загрузи изображение</small></div></div>
+<div class="result-content" id="result"><span class="tag">Демонстрационный режим</span><h2 id="result-title">Изображение загружено</h2><p id="result-text">Фотография готова к анализу.</p><div class="notice">Это демонстрация интерфейса. Настоящее определение вида требует подключения и тестирования модели компьютерного зрения; сайт не выдаёт предположение за достоверный результат.</div></div></div></div></div></section>
+<section id="map"><div class="container"><div class="section-head"><div class="kicker">Исследуй территорию</div><h2>Эко-карта наблюдений</h2><p>Концепция карты для отметок о природе и экологических наблюдениях.</p></div>
+<div class="map-panel"><div class="map-top"><div><h3 style="margin:0">Burabay Nature Map</h3><p>Демонстрационные отметки — не реальные координаты наблюдений</p></div><span class="tag">MAP CONCEPT</span></div><div class="map-canvas"><div class="lake"></div><div class="forest f1">♣ ♣ ♣ ♣ ♣</div><div class="forest f2">♣ ♣ ♣ ♣ ♣</div><div class="pin p1"><span>🌿</span></div><div class="pin p2"><span>🐾</span></div><div class="pin p3"><span>🦅</span></div><div class="map-caption">Схематичная иллюстрация природной территории</div></div></div></div></section>
+<section><div class="container impact"><div class="impact-main"><div class="kicker">Наша миссия</div><h3>Каждое наблюдение может стать шагом к сохранению природы.</h3><p>EcoBurabay AI объединяет цифровые инструменты и экологическое просвещение. Наша идея — сделать изучение биоразнообразия понятным, интересным и доступным.</p><a class="btn" href="#home">Вернуться наверх ↑</a></div>
+<div class="impact-list"><div class="impact-item"><span>🌱</span><div><b>Изучай</b><small>Узнавай больше о живых организмах.</small></div></div><div class="impact-item"><span>🔎</span><div><b>Наблюдай</b><small>Фиксируй интересные природные наблюдения.</small></div></div><div class="impact-item"><span>🤝</span><div><b>Сохраняй</b><small>Делись знаниями и береги окружающую среду.</small></div></div></div></div></section>
+</main>
+<footer><div class="container footer-inner"><div><b>EcoBurabay AI</b> · Protect biodiversity with technology</div><div>Проект для 24 HOURS CHALLENGE · Burabay IT BIL</div></div></footer>
+<div class="toast" id="toast">Функция доступна в демонстрационном режиме</div>
+<script>
+const menu=document.getElementById('menu'),nav=document.getElementById('nav');
+menu.addEventListener('click',()=>nav.classList.toggle('open'));
+nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
+const photo=document.getElementById('photo'),preview=document.getElementById('preview'),analyze=document.getElementById('analyze');
+const placeholder=document.getElementById('placeholder'),result=document.getElementById('result');
+let fileUrl=null;
+photo.addEventListener('change',()=>{
+ const file=photo.files&&photo.files[0]; if(!file)return;
+ if(!file.type.startsWith('image/')){showToast('Пожалуйста, выбери файл изображения.');return}
+ if(fileUrl)URL.revokeObjectURL(fileUrl);
+ fileUrl=URL.createObjectURL(file);preview.src=fileUrl;preview.style.display='block';analyze.style.display='inline-block';
+ placeholder.style.display='none';result.style.display='block';
+ document.getElementById('result-title').textContent='Фото готово к анализу';
+ document.getElementById('result-text').textContent='Файл «'+file.name+'» загружен. Нажми кнопку, чтобы посмотреть демонстрационный сценарий.';
+});
+analyze.addEventListener('click',()=>{
+ document.getElementById('result-title').textContent='Демо-анализ подготовлен';
+ document.getElementById('result-text').textContent='Изображение принято интерфейсом EcoBurabay AI. Для определения конкретного вида нужно подключить обученную модель распознавания и базу проверенных видов.';
+ showToast('Демо завершено — AI-модуль пока не подключён.');
+});
+function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2600)}
+const drop=document.getElementById('drop');
+['dragenter','dragover'].forEach(ev=>drop.addEventListener(ev,e=>{e.preventDefault();drop.style.borderColor='#fff'}));
+['dragleave','drop'].forEach(ev=>drop.addEventListener(ev,e=>{e.preventDefault();drop.style.borderColor=''}));
+drop.addEventListener('drop',e=>{const f=e.dataTransfer.files[0];if(f){const dt=new DataTransfer();dt.items.add(f);photo.files=dt.files;photo.dispatchEvent(new Event('change'))}});
+</script>
+</body></html>
